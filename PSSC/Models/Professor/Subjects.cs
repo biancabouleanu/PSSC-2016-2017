@@ -19,6 +19,10 @@ namespace Models.Professor
             _subjects = subjects;
         }
 
+        public Subjects()
+        {
+        }
+
         public void AddExamGrade(PlainText subjectName, RegistrationNumber regNumber, Grade grade)
         {
             _subjects.Find(d => d.SubjectInfo.Name == subjectName)
