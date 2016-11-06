@@ -11,8 +11,9 @@ namespace Models.Subject
     //Entity
     public class Subject
     {
+        public Guid GetID { get; internal set; }
         public SubjectInformation SubjectInfo { get; internal set; }
-
+        
         private Dictionary<Student.Student, SubjectSituation> _signedUpStudentsGrades;
         public Dictionary<Student.Student, SubjectSituation> SignedUpStudentsGrades { get { return _signedUpStudentsGrades; } }
 
@@ -27,6 +28,12 @@ namespace Models.Subject
             SubjectInfo = subjectInfo;
         }
 
+        public Subject(Guid getID, Dictionary<Student.Student, SubjectSituation> signedUpStudentsGrades, SubjectInformation subjectInfo)
+        {
+            GetID = getID;
+            _signedUpStudentsGrades = signedUpStudentsGrades;
+            SubjectInfo = subjectInfo;
+        }
         public Subject(SubjectInformation subjectInfo) : this()
         {
             SubjectInfo = subjectInfo;
